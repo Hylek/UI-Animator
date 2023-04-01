@@ -1,0 +1,14 @@
+{
+	"name": "com.danielcumbor.uianimator",
+	"version": "1.0.0",
+	"displayName": "UIAnimator System for uGUI",
+	"description": "This tool allows you to quickly create animations and sort your complex UI into pages.",
+	"unity": "2022.2",
+	"unityRelease": "12f1",
+	"author": {
+		"name": "Daniel Cumbor",
+		"email": "dan-dev@proton.me",
+		"url": "https://www.danielcumbor.uk"
+	},
+	"type": "tool"
+}

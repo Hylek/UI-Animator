@@ -1,0 +1,130 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/ToolingUI/uianimator-style.uss?fileID=7433441132597879392&amp;guid=7023fc8c4ac773449b1298704870ca8b&amp;type=3#uianimator-style" />
+    <ui:VisualElement name="Parent" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px;">
+        <ui:VisualElement name="Core" class="section" style="flex-grow: 1; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-left: 0; margin-right: 0; margin-top: 0; background-color: rgba(255, 255, 255, 0.59);">
+            <ui:VisualElement name="CorePanel" class="section" style="flex-grow: 1; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 0; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; margin-left: 0; margin-right: 0; margin-top: 0;">
+                <ui:Label tabindex="-1" text="Core Settings" display-tooltip-when-elided="true" name="CoreTitle" style="padding-bottom: 5px; -unity-font-style: bold; margin-left: 2px;" />
+                <ui:Toggle label="Manual Mode" name="ManualMode" tooltip="Enable this if you want to manually call the animations rather than rely on entry and exit events." binding-path="manualMode" style="border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 5px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="OnStart" style="flex-grow: 1; background-color: rgba(143, 255, 187, 0.59); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;">
+            <ui:VisualElement name="OnStartPanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: flex; visibility: visible; margin-bottom: 5px;">
+                <ui:Label tabindex="-1" text="On Entry" display-tooltip-when-elided="true" name="OnStartTitle" style="padding-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Animation Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnStartAnimMode" binding-path="entryAnimation.mode" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Start Delay" value="0" name="OnStartStartDelay" binding-path="entryAnimation.startDelay" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Delay" value="0" name="OnStartEndDelay" binding-path="entryAnimation.endDelay" style="margin-bottom: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnStartFadePanel" class="light-background section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Fade Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:FloatField label="Start Fade" value="0" name="OnStartStartFade" binding-path="entryAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Fade" value="0" name="OnStartEndFade" binding-path="entryAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="entryAnimation.speedValue" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnStartScalePanel" class="light-background section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Scale Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnStartScaleEaseType" binding-path="entryAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Start Scale" value="0" name="OnStartStartScale" binding-path="entryAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Scale" value="0" name="OnStartEndScale" binding-path="entryAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="entryAnimation.speedValue" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnStartMovePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Move Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnStartEaseType" binding-path="entryAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Vector3Field label="Start Position" name="OnStartStartPosition" binding-path="entryAnimation.startPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Button text="Record Start Position" display-tooltip-when-elided="true" name="OnStartRecordStartPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 2px; margin-bottom: 2px;" />
+                <ui:Vector3Field label="End Position" name="OnStartEndPosition" binding-path="entryAnimation.endPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 2px; margin-bottom: 2px;" />
+                <ui:Button text="Record End Position" display-tooltip-when-elided="true" name="OnStartRecordEndPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 2px; margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" name="OnEntryMoveSpeed" binding-path="entryAnimation.speedValue" style="margin-top: 5px; margin-bottom: 2px; padding-left: 2px; padding-right: 2px; padding-top: 0; padding-bottom: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="OnExit" style="flex-grow: 1; background-color: rgba(255, 150, 143, 0.59); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px;">
+            <ui:VisualElement name="OnExitPanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: flex; visibility: visible; margin-bottom: 5px;">
+                <ui:Label tabindex="-1" text="On Exit" display-tooltip-when-elided="true" name="OnExitTitle" style="padding-bottom: 2px; -unity-font-style: bold; margin-bottom: 5px;" />
+                <ui:EnumField label="Animation Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnExitAnimMode" binding-path="exitAnimation.mode" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Start Delay" value="0" name="OnExitStartDelay" binding-path="exitAnimation.startDelay" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Delay" value="0" name="OnExitEndDelay" binding-path="exitAnimation.endDelay" style="margin-bottom: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnExitFadePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Fade Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:FloatField label="Start Fade" value="0" name="OnExitStartFade" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Fade" value="0" name="OnExitEndFade" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnExitScalePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Scale Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnExitScaleEaseType" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Starting Scale" value="0" name="OnExitStartScale" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="End Scale" value="0" name="OnExitEndScale" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OnExitMovePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Move Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OnExitMoveEaseType" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Vector3Field label="Start Position" name="OnExitStartPosition" binding-path="exitAnimation.startPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Button text="Record Start Position" display-tooltip-when-elided="true" name="OnExitRecordStartPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Vector3Field label="End Position" name="OnExitEndPosition" binding-path="exitAnimation.endPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Button text="Record End Position" display-tooltip-when-elided="true" name="OnExitRecordEndPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" name="OnExitMoveSpeed" binding-path="exitAnimation.speedValue" style="margin-top: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="OnHighlight" style="flex-grow: 1; background-color: rgba(245, 255, 143, 0.59); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 10px; display: none;">
+            <ui:VisualElement name="OH-Panel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: flex; visibility: visible; margin-bottom: 5px;">
+                <ui:Label tabindex="-1" text="On Highlight" display-tooltip-when-elided="true" name="OH-Title" style="padding-bottom: 2px; -unity-font-style: bold; margin-bottom: 5px;" />
+                <ui:Toggle label="Enabled" name="OH-Enabled" />
+                <ui:EnumField label="Animation Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-AnimMode" binding-path="exitAnimation.mode" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Interval" value="0" name="OH-Interval" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-FadePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Fade Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:FloatField label="Start Fade" value="0" name="OH-StartFade" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Peak Fade" value="0" name="OH-PeakFade" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" name="OH-FadeSpeed" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-ScalePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Scale Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-ScaleEase" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Starting Scale" value="0" name="OH-StartScale" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Peak Scale" value="0" name="OH-PeakScale" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" name="OH-ScaleSpeed" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-MovePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Move Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-MoveEase" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Vector3Field label="Start Position" name="OH-StartPos" binding-path="exitAnimation.startPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Button text="Record Start Position" display-tooltip-when-elided="true" name="OH-RecordStartPos" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Vector3Field label="End Position" name="OH-PeakPos" binding-path="exitAnimation.endPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Button text="Record End Position" display-tooltip-when-elided="true" name="OH-EndPos" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" name="OH-RecordEndPos" binding-path="exitAnimation.speedValue" style="margin-top: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="OnPress" style="flex-grow: 1; background-color: rgba(143, 255, 249, 0.59); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-bottom: 0; display: none;">
+            <ui:VisualElement name="OP-Panel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: flex; visibility: visible; margin-bottom: 5px;">
+                <ui:Label tabindex="-1" text="On Press" display-tooltip-when-elided="true" name="OP-Title" style="padding-bottom: 2px; -unity-font-style: bold; margin-bottom: 5px;" />
+                <ui:Toggle label="Enabled" name="OH-Enabled" />
+                <ui:EnumField label="Animation Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-AnimMode" binding-path="exitAnimation.mode" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-FadePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Fade Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:FloatField label="Start Fade" value="0" name="OH-StartFade" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Peak Fade" value="0" name="OH-PeakFade" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" name="OH-FadeSpeed" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-ScalePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Scale Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-ScaleEase" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:FloatField label="Starting Scale" value="0" name="OH-StartScale" binding-path="exitAnimation.startValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Peak Scale" value="0" name="OH-PeakScale" binding-path="exitAnimation.endValue" style="margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" binding-path="exitAnimation.speedValue" name="OH-ScaleSpeed" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OH-MovePanel" class="section" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; display: none; visibility: visible; margin-bottom: 0;">
+                <ui:Label tabindex="-1" text="Move Settings" display-tooltip-when-elided="true" style="margin-bottom: 5px; -unity-font-style: bold;" />
+                <ui:EnumField label="Easing Mode" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" name="OH-MoveEase" binding-path="exitAnimation.easeType" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Vector3Field label="Start Position" name="OH-StartPos" binding-path="exitAnimation.startPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Button text="Record Start Position" display-tooltip-when-elided="true" name="OH-RecordStartPos" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Vector3Field label="End Position" name="OH-PeakPos" binding-path="exitAnimation.endPosition" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:Button text="Record End Position" display-tooltip-when-elided="true" name="OH-EndPos" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 2px;" />
+                <ui:FloatField label="Speed" name="OH-RecordEndPos" binding-path="exitAnimation.speedValue" style="margin-top: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

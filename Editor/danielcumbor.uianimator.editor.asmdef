@@ -1,0 +1,16 @@
+{
+    "name": "danielcumbor.uianimator.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ff0989214a7daae4a881d20898d3c6bd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
